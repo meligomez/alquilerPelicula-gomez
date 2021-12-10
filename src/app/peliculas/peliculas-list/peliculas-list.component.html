@@ -1,0 +1,38 @@
+<body style="text-align: center; ">
+  <div>
+    <h1 style="color: green;">
+      Peliculas
+    </h1>
+
+  </div>
+  <div style="text-align: center; display:flex; justify-content:space-around">
+     <div *ngFor="let pelicula of peliculas">
+      <div class="col-6"
+      style="padding-right:20%; width: 300px;">
+        <div class="card col-12">
+            <img class="card-img-top"
+                  src="
+        {{ pelicula.urlImagen }}"
+                  alt="Card image"
+                  style="width: 100%;" />
+            <div class="card-body">
+                <h4 class="card-title"> {{ pelicula.descripcion }} </h4>
+                <p class="card-text"> {{ pelicula.resumen }} </p>
+
+
+
+
+                <a href="#"
+                    class="btn btn-primary">
+                  Ver Detalle</a>
+            </div>
+        </div>
+      </div>
+
+     </div>
+
+  </div>
+
+  <br><br>
+
+</body>
