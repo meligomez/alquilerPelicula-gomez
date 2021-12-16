@@ -1,0 +1,13 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ pelicula.movie_title }}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p>Te daremos un poco más de info de esta peli!</p>
+  <p>Si te gustan estos actores, venimos bien: {{ pelicula.actor_1_name }}, {{ pelicula.actor_2_name }} dirigida por: {{ pelicula.director_name }} fue realizada en {{  pelicula.country }} y es del año {{ pelicula.title_year }}</p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>

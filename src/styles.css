@@ -1,1 +1,210 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.bg__img {
+  /* height: 100vh; */
+  /* width: auto; */
+  background: linear-gradient(rgb(14 14 14 / 50%), rgb(64 60 60 / 30%)),
+    url(https://assets.nflxext.com/ffe/siteui/vlv3/84b453b4-0d46-4f2c-bd44-81aa6c19c6b5/555b0415-4928-40b4-8169-d0cbcbb2d3cb/IN-en-20201116-popsignuptwoweeks-perspective_alpha_website_medium.jpg);
+  /* background-repeat: no-repeat; */
+  /* background-size:auto */
+  /* background-attachment: fixed; */
+  background-size: initial;
+  /* background-size: cover; */
+  background-blend-mode: color-burn;
+}
+
+.login__container {
+  /* border: 2px solid red; */
+  width: 460px;
+  height: 600px;
+  margin: 0 auto;
+  position: relative;
+  top: 105px;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.signin__title {
+  font-size: 30px;
+  color: white;
+  text-align: left;
+  margin-bottom: 15px;
+  padding-top: 60px;
+  font-weight: 700;
+}
+
+.signin__main__block {
+  /* border: 2px solid green; */
+  margin: 0px 60px;
+}
+
+.input__cls {
+  /* padding-left: 10px; */
+  text-indent: 10px;
+  height: 50px;
+  width: 320px;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+}
+
+input::placeholder {
+  /* Firefox, Chrome, Opera */
+  /* padding-left: 10px;  */
+  text-indent: 10px;
+}
+
+.input__row {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.signin__btn {
+  height: 50px;
+  width: 320px;
+  font-size: 18px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background-color: #e50914;
+  font-weight: 600;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.remember__sec {
+  margin-top: 15px;
+  color: #9c9c9c;
+}
+
+.help {
+  float: right;
+  cursor: pointer;
+  text-decoration: none;
+}
+.help a {
+  text-decoration: none;
+  color: white;
+}
+
+.help:hover {
+  text-decoration: underline;
+}
+
+.fb__login__sec {
+  margin-top: 50px;
+}
+
+.fb__login__sec img {
+  height: 20px;
+  width: 20px;
+}
+
+.fb__login__sec span {
+  color: #9c9c9c;
+  font-size: 14px;
+  padding-left: 5px;
+  cursor: pointer;
+  position: relative;
+  bottom: 5px;
+}
+
+.new__user {
+  color: #9c9c9c;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.new__user span {
+  color: white;
+  cursor: pointer;
+}
+
+.new__user span:hover {
+  text-decoration: underline;
+}
+
+.notice {
+  color: #9c9c9c;
+  font-size: 14px;
+  margin-top: 14px;
+}
+
+.notice span {
+  color: blue;
+}
+
+.svg-logo {
+  fill: #e50914;
+}
+
+.logo {
+  height: 0;
+  width: 160px;
+  position: relative;
+  left: 5%;
+  top: 15px;
+}
+
+.footer {
+  background-color: rgba(0, 0, 0, 0.75);
+  /* width: 100%; */
+  position: relative;
+  top: 175%;
+  height: 200px;
+}
+
+.footer .alig-footer-sec {
+  position: absolute;
+  left: 15%;
+  top: 10%;
+}
+
+.footer .questions {
+  color: #9c9c9c;
+  font-size: 18px;
+}
+
+.other__links ul {
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.other__links ul li {
+  margin-bottom: 16px;
+  display: inline-block;
+  min-width: 100px;
+  width: 20%;
+}
+
+.footer_links {
+  /* max-width: 1000px; */
+  font-size: 13px;
+  list-style-type: none;
+  /* box-sizing: border-box; */
+}
+
+.other__links ul li a {
+  color: #918383;
+  text-decoration: none;
+  /* word-spacing: 40; */
+}
+body{
+  background-color: #141414;
+  margin: 0;
+  margin-bottom: 40px;
+}
+html {
+  min-height: 100%;
+  position: relative;
+}
+

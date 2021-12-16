@@ -1,0 +1,50 @@
+<div >
+<app-header></app-header>
+    <h1 id="h-main">Melflix Original</h1>
+    <br><br>
+    <p id="item">Nada de Netflix pagando mensual, ahora aprovechá Melflix, compras una vez, y despues a disfrutar</p>
+    <p id="content">Películas, programas de televisión, especiales y más, todo está diseñado <br> específicamente para vos!. </p><br>
+
+<body>
+  <div style="display:flex; flex-wrap:wrap; justify-content: end;" class="container">
+    <!-- <div class="arrow-left">
+      <i class="icon-angle-left"></i>
+    </div> -->
+    <div *ngFor="let pelicula of peliculas">
+      <div class="item item-1" [ngStyle]="{'background-image': 'url(' +  pelicula.movie_imdb_link  + ' )'}">
+          <div class="body-item">
+            <div class="body-item-1">
+              <div class="play">
+                <button class="icon-bootstrap bi bi-card-list" (click)="abrirDetallePelicula(pelicula)"><i-bs name="chevron-double-up" width="65" height="65"> </i-bs></button>
+                <!-- <app-pelicula-detalle  [pelicula]="pelicula" ></app-pelicula-detalle> -->
+              </div>
+            </div>
+            <div class="title body-item-2"> {{ pelicula.movie_title }}</div>
+            <div class="properties body-item-3">
+              <span class="year">{{ pelicula.director_name }}</span>
+              <span class="age-limit">13+</span>
+              <span class="time">2h 13m</span>
+            </div>
+            <p class="description body-item-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius alias libero..</p>
+            <div class="icon-set body-item-6">
+              <!-- <i-bs class="icon-bootstrap" name="cart-plus-fill" width="65" height="65"> </i-bs> -->
+              <!-- <div class="text-center"> -->
+                <button  class="icon-bootstrap" name="cart-plus-fill"  type="button" (click)="agregarAlCarrito($event, pelicula.id_movie)" ><i-bs class="icon-bootstrap" name="cart-plus-fill" width="65" height="65"> </i-bs></button>
+              <!-- </div> -->
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- <div class="arrow-right">
+      <i class="icon-angle-right"></i>
+    </div> -->
+  </div>
+
+  <div style="  position: relative;top: 177%;">
+    <!-- <app-footer></app-footer> -->
+
+  </div>
+</body>
+
+
+</div>

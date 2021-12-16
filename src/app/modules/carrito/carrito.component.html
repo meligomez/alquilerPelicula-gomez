@@ -1,0 +1,18 @@
+<div class="product-cart" *ngIf="pelicula && pelicula.length > 0">
+  <ul>
+    <li *ngFor="let peli of pelicula">
+      {{peli.movie_title}}
+      <span>{{peli.precio  | currency:'ARS'}}</span>
+      <button type="button" class="close" aria-label="Eliminar" (click)="eliminarPeliculaDelCarrito(peli.id_movie)">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </li>
+  </ul>
+  <div class="cart-total">
+    <p><button type="button" class="btn btn-outline-primary btn-sm" (click)="vaciarCarrito()">Vaciar Carrito</button></p>
+    <p class="text-right">
+      <strong class="d-block">Total:</strong>
+      <span class="d-block">{{totalAmmount | currency:'ARS'}}</span>
+    </p>
+  </div>
+</div>
