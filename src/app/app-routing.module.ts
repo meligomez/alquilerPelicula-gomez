@@ -30,7 +30,11 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'login',pathMatch:'full'
-  }
+  },
+  {
+    path: 'not-found/:parametro',
+    component: CoomingSoonComponent
+  },
 ];
 
 @NgModule({

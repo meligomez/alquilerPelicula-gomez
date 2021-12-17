@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     pass:('admin')
   });
 
-  onSubmit(){
+  login(){
 
     const {user, pass} = this.loginForm.value;
 

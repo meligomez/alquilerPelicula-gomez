@@ -4,6 +4,7 @@ import { Pelicula } from './pelicula';
 import { PeliculaDetalleComponent } from '../pelicula-detalle/pelicula-detalle.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CarritoService } from '../../carrito/carrito.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-peliculas-list',
@@ -18,14 +19,19 @@ export class PeliculasListComponent implements OnInit {
   peliculas: Pelicula[] = [];
  // @Input() pelis: Pelicula[] = [];
   private peliculaSeleccionada!: Pelicula[];
+  $peliculasSubs!:Subscription;
 
   ngOnInit(): void {
     this.buscarTodasLasPeliculas();
   }
 
 
+  ngOnDestroy(): void {
+    this.$peliculasSubs.unsubscribe();
+  }
+
   buscarTodasLasPeliculas():any{
-    this._svcPelicula.getAllPeliculasJson()
+    this.$peliculasSubs = this._svcPelicula.getAllPeliculasJson()
     .subscribe( todasLasPeliculas =>
       {
         this.peliculas= todasLasPeliculas;

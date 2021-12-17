@@ -16,6 +16,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { CoomingSoonComponent } from './shared/cooming-soon/cooming-soon.component';
 import { CarritoComponent } from './modules/carrito/carrito.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    NgxBootstrapIconsModule.pick(allIcons)
+    NgxBootstrapIconsModule.pick(allIcons),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
