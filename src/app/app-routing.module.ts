@@ -5,6 +5,7 @@ import { PeliculasListComponent } from './modules/peliculas/peliculas-list/pelic
 import { LoginComponent } from './auth/login/login.component';
 import { PeliculaDetalleComponent } from './modules/peliculas/pelicula-detalle/pelicula-detalle.component';
 import { CoomingSoonComponent } from './shared/cooming-soon/cooming-soon.component';
+import { AuthGuarder } from './auth/auth-guard';
 
 const routes: Routes = [
   {
@@ -25,6 +26,7 @@ const routes: Routes = [
   },
   {
     path: 'not-found',
+    canLoad: [AuthGuarder],
     component: CoomingSoonComponent
   },
   {
@@ -33,6 +35,7 @@ const routes: Routes = [
   },
   {
     path: 'not-found/:parametro',
+    canActivate: [AuthGuarder],
     component: CoomingSoonComponent
   },
 ];

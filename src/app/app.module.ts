@@ -17,6 +17,7 @@ import { CoomingSoonComponent } from './shared/cooming-soon/cooming-soon.compone
 import { CarritoComponent } from './modules/carrito/carrito.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthGuarder } from './auth/auth-guard';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NgxBootstrapIconsModule.pick(allIcons),
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    AuthGuarder
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

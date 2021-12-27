@@ -10,5 +10,7 @@ export interface Pelicula{
   content_rating: string,
   title_year: string,
   movie_imdb_link: string,
-  precio:number
+  precio:number,
+  id:number,
+  esAdmin:boolean
 }

@@ -31,7 +31,7 @@ export class PeliculasListComponent implements OnInit {
   }
 
   buscarTodasLasPeliculas():any{
-    this.$peliculasSubs = this._svcPelicula.getAllPeliculasJson()
+    this.$peliculasSubs = this._svcPelicula.getAllPeliculas()
     .subscribe( todasLasPeliculas =>
       {
         this.peliculas= todasLasPeliculas;
@@ -54,6 +54,10 @@ export class PeliculasListComponent implements OnInit {
       return pelicula.id_movie === peliculaId;
     });
 
-    this._srvCarrito.agregarPeliculaACarrito(this.peliculaSeleccionada[0]);
+    this._srvCarrito.agregarPeliculaACarrito(this.peliculaSeleccionada[0]).subscribe(
+      (rta:any)=>{
+        console.log(rta);
+      }
+    );
   }
 }

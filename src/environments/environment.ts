@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   endpoint: 'assets/mocks/peliculas.json',
+  endpointMockApi: 'https://61c8e1beadee460017260e48.mockapi.io'
 };
 
 /*

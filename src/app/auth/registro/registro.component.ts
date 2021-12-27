@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-registro',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class RegistroComponent implements OnInit {
 
-  constructor(private fb:FormBuilder, private router:Router) { }
+  constructor(private fb:FormBuilder, private router:Router,  private _svcAuth:AuthService) { }
 
   ngOnInit(): void {
   }
@@ -18,11 +19,15 @@ export class RegistroComponent implements OnInit {
     nombre:(''),
     apellido:(''),
     user:(''),
-    pass:(''),
-    repetirPass:('')
+    pass:('')
   });
 
   registrar(){
-
+    const {nombre, apellido,user,pass} = this.registroForm.value;
+    this._svcAuth.registrarUser(nombre,apellido,user,pass).subscribe(
+      (data:any) => {
+        console.log(data);
+      }
+    )
   }
 }

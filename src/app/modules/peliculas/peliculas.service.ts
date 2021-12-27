@@ -25,7 +25,9 @@ export class PeliculasService {
     return this.peliculas;
   }
 
-
+  getAllPeliculas(){
+    return this.http.get<Pelicula[]>(`${env.endpointMockApi}/movies`)
+  }
 
 
 }

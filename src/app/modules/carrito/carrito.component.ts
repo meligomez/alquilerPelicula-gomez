@@ -18,23 +18,46 @@ export class CarritoComponent implements OnInit {
   pelicula!: Pelicula[];
 
   constructor(
-    private _srvCarrito: CarritoService,private _modalService: NgbModal
+    private _srvCarrito: CarritoService,private _modalService: NgbModal, private _srvPelicula: CarritoService
   ) { }
 
   ngOnInit() {
 
     console.log('carrito componente: '+this.pelicula.length)
-    this.totalAmmount = this._srvCarrito.obtenerPrecioTotal();
+    this._srvPelicula.getAllPeliculasCarrito().subscribe((prueba:Pelicula[])=>
+      {
+        console.log('carrito componente 2'+prueba);
+        this.obtenerPrecioTotal(prueba);
+      }
+    );
 
   }
 
   eliminarPeliculaDelCarrito(idPelicula:number) {
-    this._srvCarrito.eliminarPeliculaDelCarrito(idPelicula);
+    this._srvCarrito.eliminarPeliculaDelCarrito(idPelicula).subscribe(
+      (peliculas:Pelicula) => {
+        console.log("Eliminar pelicula: "+peliculas)
+      }
+    );
 
   }
 
-  vaciarCarrito() {
-    this._srvCarrito.vaciarCarrito();
+  vaciarCarrito(peliculas:Pelicula[]) {
+    this._srvCarrito.vaciarCarrito(peliculas);
   }
 
+  private obtenerPrecioTotal(peliculas:Pelicula[]):number {
+    let total = 0;
+     peliculas.
+      map(
+        (peli:Pelicula) =>{
+          console.log(peli.precio)
+          this.totalAmmount += peli.precio;
+        }
+      );
+    // this.itemsCarrito.map(item => {
+    //   total += item.precio;
+    // });
+    return this.totalAmmount;
+  }
 }
