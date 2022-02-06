@@ -18,6 +18,8 @@ import { CarritoComponent } from './modules/carrito/carrito.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthGuarder } from './auth/auth-guard';
+import { AltaPeliculaComponent } from './modules/peliculas/peliculas-abm/alta-pelicula.component';
+import { ListarPeliculaComponent } from './modules/peliculas/peliculas-abm/listar-pelicula.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { AuthGuarder } from './auth/auth-guard';
     FooterComponent,
     HeaderComponent,
     CoomingSoonComponent,
-    CarritoComponent
+    CarritoComponent,
+    AltaPeliculaComponent,
+    ListarPeliculaComponent
   ],
   imports: [
     BrowserModule,

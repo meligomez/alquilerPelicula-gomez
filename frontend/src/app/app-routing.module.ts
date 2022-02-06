@@ -6,6 +6,8 @@ import { LoginComponent } from './auth/login/login.component';
 import { PeliculaDetalleComponent } from './modules/peliculas/pelicula-detalle/pelicula-detalle.component';
 import { CoomingSoonComponent } from './shared/cooming-soon/cooming-soon.component';
 import { AuthGuarder } from './auth/auth-guard';
+import { ListarPeliculaComponent } from './modules/peliculas/peliculas-abm/listar-pelicula.component';
+import { AltaPeliculaComponent } from './modules/peliculas/peliculas-abm/alta-pelicula.component';
 
 const routes: Routes = [
   {
@@ -37,6 +39,18 @@ const routes: Routes = [
     path: 'not-found/:parametro',
     canActivate: [AuthGuarder],
     component: CoomingSoonComponent
+  },
+  {
+    path: 'admin-peliculas',
+    component: ListarPeliculaComponent
+  },
+  {
+    path: 'agregar-pelicula',
+    component: AltaPeliculaComponent
+  },
+  {
+    path: 'admin-peliculas/editar/:id',
+    component: AltaPeliculaComponent
   },
 ];
 

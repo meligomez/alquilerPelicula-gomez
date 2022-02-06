@@ -1,0 +1,38 @@
+<div class="bg__img">
+
+      <h1 style="text-align:center; color:white">Listado de Peliculas</h1>
+    <div class="col-6">
+      <a class="col-3" routerLink="/peliculas" class="btn btn-sm btn-light mb-2">Volver</a>
+      <a style="text-align:right" routerLink="/agregar-pelicula" class="btn btn-sm btn-success mb-2">Agregar Pelicula</a>
+    </div>
+    <table style="background-color:rgba(0,0,0,0.5);  color:white" class="table offset-3 col-6">
+        <thead>
+            <tr>
+                <th style="width: 30%">Titulo</th>
+                <th style="width: 30%">Año</th>
+                <th style="width: 30%">Idioma</th>
+                <th style="width: 10%"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pelicula of peliculas">
+                <td>{{pelicula.movie_title}} </td>
+                <td>{{pelicula.title_year}}</td>
+                <td>{{pelicula.language}}</td>
+                <td style="white-space: nowrap">
+                    <a routerLink="editar/{{pelicula.id_movie}}" class="btn btn-sm btn-primary mr-1">Editar</a>
+                    <button (click)="eliminarPelicula(pelicula.id_movie)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="!pelicula.id_movie">
+                        <span *ngIf="!pelicula.id_movie" class="spinner-border spinner-border-sm"></span>
+                        <span *ngIf="pelicula.id_movie">Eliminar</span>
+                    </button>
+                </td>
+            </tr>
+            <tr *ngIf="!peliculas">
+                <td colspan="4" class="text-center">
+                    <span class="spinner-border spinner-border-lg align-center"></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
